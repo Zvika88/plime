@@ -11,18 +11,18 @@ class MeetingsController < ApplicationController
   end
 
   def update
-    Meeting.update_meeting((params[:id]), meeting_params)
+    Meeting.update_meeting(meeting_params, (params[:id]))
     render json:{}, status: :accepted
   end
 
-  # def destroy
-  #   Goal.destroy_goal(params[:id])
-  #   render nothing: true, status: :no_content
-  # end
+  def destroy
+     Meeting.destroy_meeting(params[:id])
+     render nothing: true, status: :no_content
+  end
 
   private
 
     def meeting_params
-      params.require(:meeting).permit(:name)
+      params.require(:meeting).permit(:name, :date, :duration, :location)
     end
 end
