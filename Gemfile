@@ -20,6 +20,8 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'database_cleaner'
   gem 'dotenv-rails'
+  gem 'devise_token_auth'
+  gem 'omniauth'
 end
 
 group :development do
