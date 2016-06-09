@@ -1,7 +1,8 @@
-### Example Requests:
 
-CRUD for Meetings:
 
+### User Mdel
+
+#### Example Requests:
 
 Post: (create)
 
@@ -25,6 +26,8 @@ curl -v http://localhost:3000/meetings/1 -X DELETE -H "Accept: application/json"
 
 ### User Model
 
+#### Example Requests:
+
 Registration
 ```
 curl -v http://localhost:3000/auth -X POST -H "Accept: application/json" -H "Content-Type: application/json" -d "{\"name\":\"TestUser\",\"email\":\"test@test.com\",\"password\":\"12345678\", \"password_confirmation\":\"12345678\" }" 
@@ -39,10 +42,11 @@ curl -v http://localhost:3000/auth/sign_out/ -X DELETE -H "Accept: application/j
 curl -v http://localhost:3000/auth/validate_token -X GET -H "Accept: application/json" -H "Content-Type: application/json" -d "{\"uid\":\"test@test.com\", \"client\":\"FIVT4tgZSByfLVEOeHJ8Ow\", \"access-token\":\"JUk7Qgc14nfftcinZ2HYTg\"}" 
 ```
 
+
 #### All user resources
 
 
-
+```
 Prefix Verb   URI Pattern                            Controller#Action
         new_user_session GET    /auth/sign_in(.:format)                devise_token_auth/sessions#new
             user_session POST   /auth/sign_in(.:format)                devise_token_auth/sessions#create
@@ -61,3 +65,4 @@ cancel_user_registration GET    /auth/cancel(.:format)                 devise_to
                          DELETE /auth(.:format)                        devise_token_auth/registrations#destroy
 
 
+```
